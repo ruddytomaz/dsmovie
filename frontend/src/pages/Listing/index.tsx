@@ -7,7 +7,7 @@ import Pagination from "../../components/pagination";
 
 function Listing() {
 
-    const [pageNumber] = useState(0)
+    const [pageNumber, setPageNumber] = useState(0)
 
     const [page, setPage] = useState<MoviePage>({
         content: [],
@@ -29,9 +29,13 @@ function Listing() {
             });
     }, [pageNumber]);
 
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
+    
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={handlePageChange} />
 
             <div className="cotainer">
                 <div className="row">
