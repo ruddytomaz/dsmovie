@@ -22,8 +22,7 @@ public class ScorePK implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	public ScorePK() {
-		
+	public ScorePK() {		
 	}
 
 	public Movie getMovie() {
@@ -41,7 +40,4 @@ public class ScorePK implements Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
-
 }

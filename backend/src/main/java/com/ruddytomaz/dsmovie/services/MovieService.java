@@ -10,7 +10,6 @@ import com.ruddytomaz.dsmovie.dto.MovieDTO;
 import com.ruddytomaz.dsmovie.entities.Movie;
 import com.ruddytomaz.dsmovie.repositories.MovieRepository;
 
-
 @Service
 public class MovieService {
 	
@@ -20,7 +19,7 @@ public class MovieService {
 	@Transactional(readOnly = true)
 	public Page<MovieDTO> findAll(Pageable pageable) {
 		Page<Movie> result = repository.findAll(pageable);
-		Page<MovieDTO> page = result.map(x ->new MovieDTO(x));
+		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
 		return page;
 	}
 	
@@ -30,5 +29,5 @@ public class MovieService {
 		MovieDTO dto = new MovieDTO(result);
 		return dto;
 	}
-
+	
 }
